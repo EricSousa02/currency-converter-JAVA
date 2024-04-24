@@ -51,7 +51,7 @@ public class Main {
         String moedaOrigem = codigosMoeda.get(escolha - 1);
 
         try {
-            String apiKey = "9ca4ddbbeb3203ff450f7a03";
+            String apiKey = "SUA_CHAVE_API";
             URL url = new URL("https://v6.exchangerate-api.com/v6/" + apiKey + "/latest/" + moedaOrigem);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
