@@ -67,20 +67,20 @@ public class Main {
                 }
                 in.close();
 
-                // Parse JSON response using Gson
+                // Parse JSON response usando Gson
                 Gson gson = new Gson();
                 JsonObject jsonObject = gson.fromJson(response.toString(), JsonObject.class);
 
-                // Print base code
+                // Exibir moeda de origem
                 String codigoBase = jsonObject.get("base_code").getAsString();
                 System.out.println("################################################################################");
                 System.out.println("Moeda de origem: " + codigoBase);
                 System.out.println("################################################################################");
 
-                // Print conversion rates
+                // Exibir taxa de conversão
                 JsonObject taxasConversao = jsonObject.getAsJsonObject("conversion_rates");
 
-                // Print conversion rate
+                // Exibir taxa de conversão
                 if (taxasConversao.has(moedaOrigem)) {
                     double taxaMoedaOrigem = taxasConversao.get(moedaOrigem).getAsDouble();
 
